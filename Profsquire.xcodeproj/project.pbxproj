@@ -10,11 +10,11 @@
 		3A49311A1BB741B9006516D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931191BB741B9006516D8 /* AppDelegate.swift */; };
 		3A49311C1BB741B9006516D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49311B1BB741B9006516D8 /* ViewController.swift */; };
 		3A49311F1BB741B9006516D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49311D1BB741B9006516D8 /* Main.storyboard */; };
+		3A4931221BB741B9006516D8 /* Profsquire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931201BB741B9006516D8 /* Profsquire.xcdatamodeld */; };
 		3A4931241BB741B9006516D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4931231BB741B9006516D8 /* Assets.xcassets */; };
 		3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */; };
 		3A4931321BB741B9006516D8 /* ProfsquireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931311BB741B9006516D8 /* ProfsquireTests.swift */; };
 		3A49313D1BB741B9006516D8 /* ProfsquireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */; };
-		59B479501BBE437200F1AD08 /* Profsquire Icon (White).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B4794F1BBE437200F1AD08 /* Profsquire Icon (White).jpg */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 		3A4931191BB741B9006516D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A49311B1BB741B9006516D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A49311E1BB741B9006516D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A4931211BB741B9006516D8 /* Profsquire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Profsquire.xcdatamodel; sourceTree = "<group>"; };
 		3A4931231BB741B9006516D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4931261BB741B9006516D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4931281BB741B9006516D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		3A4931381BB741B9006516D8 /* ProfsquireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfsquireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfsquireUITests.swift; sourceTree = "<group>"; };
 		3A49313E1BB741B9006516D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59B4794F1BBE437200F1AD08 /* Profsquire Icon (White).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Profsquire Icon (White).jpg"; path = "Resources/Profsquire Icon (White).jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,6 @@
 		3A49310D1BB741B9006516D8 = {
 			isa = PBXGroup;
 			children = (
-				59B4794F1BBE437200F1AD08 /* Profsquire Icon (White).jpg */,
 				3A4931181BB741B9006516D8 /* Profsquire */,
 				3A4931301BB741B9006516D8 /* ProfsquireTests */,
 				3A49313B1BB741B9006516D8 /* ProfsquireUITests */,
@@ -106,6 +105,7 @@
 				3A4931231BB741B9006516D8 /* Assets.xcassets */,
 				3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */,
 				3A4931281BB741B9006516D8 /* Info.plist */,
+				3A4931201BB741B9006516D8 /* Profsquire.xcdatamodeld */,
 			);
 			path = Profsquire;
 			sourceTree = "<group>";
@@ -232,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */,
-				59B479501BBE437200F1AD08 /* Profsquire Icon (White).jpg in Resources */,
 				3A4931241BB741B9006516D8 /* Assets.xcassets in Resources */,
 				3A49311F1BB741B9006516D8 /* Main.storyboard in Resources */,
 			);
@@ -259,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4931221BB741B9006516D8 /* Profsquire.xcdatamodeld in Sources */,
 				3A49311C1BB741B9006516D8 /* ViewController.swift in Sources */,
 				3A49311A1BB741B9006516D8 /* AppDelegate.swift in Sources */,
 			);
@@ -487,7 +487,6 @@
 				3A4931431BB741B9006516D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		3A4931441BB741B9006516D8 /* Build configuration list for PBXNativeTarget "ProfsquireTests" */ = {
 			isa = XCConfigurationList;
@@ -496,7 +495,6 @@
 				3A4931461BB741B9006516D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		3A4931471BB741B9006516D8 /* Build configuration list for PBXNativeTarget "ProfsquireUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,9 +503,21 @@
 				3A4931491BB741B9006516D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A4931201BB741B9006516D8 /* Profsquire.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A4931211BB741B9006516D8 /* Profsquire.xcdatamodel */,
+			);
+			currentVersion = 3A4931211BB741B9006516D8 /* Profsquire.xcdatamodel */;
+			path = Profsquire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A49310E1BB741B9006516D8 /* Project object */;
 }

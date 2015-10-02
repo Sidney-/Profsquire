@@ -94,7 +94,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bws-aH-UET" id="rd1-bg-ibw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -152,12 +152,8 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< Updated upstream
-        <image name="defaultImg" width="120" height="120"/>
-=======
         <image name="Listview Icon" width="270" height="278"/>
         <image name="Profsquire-Background" width="2057" height="3658"/>
         <image name="Profsquire-View1-Logo" width="1213" height="1223"/>
->>>>>>> Stashed changes
     </resources>
 </document>
