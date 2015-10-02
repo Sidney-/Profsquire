@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
+    @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
+      
+        self.searchBar.layer.borderColor = UIColor.whiteColor().CGColor
+        self.searchBar.layer.borderWidth = 0.5
+        searchBar.layer.cornerRadius = 20.0
+        searchBar.clipsToBounds = true
+        
+              }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
