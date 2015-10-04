@@ -15,6 +15,8 @@
 		3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */; };
 		3A4931321BB741B9006516D8 /* ProfsquireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931311BB741B9006516D8 /* ProfsquireTests.swift */; };
 		3A49313D1BB741B9006516D8 /* ProfsquireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */; };
+		3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3A4931381BB741B9006516D8 /* ProfsquireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfsquireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfsquireUITests.swift; sourceTree = "<group>"; };
 		3A49313E1BB741B9006516D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewController.swift; sourceTree = "<group>"; };
+		3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				3A4931191BB741B9006516D8 /* AppDelegate.swift */,
-				3A49311B1BB741B9006516D8 /* ViewController.swift */,
 				3A49311D1BB741B9006516D8 /* Main.storyboard */,
 				3A4931231BB741B9006516D8 /* Assets.xcassets */,
 				3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */,
 				3A4931281BB741B9006516D8 /* Info.plist */,
 				3A4931201BB741B9006516D8 /* Profsquire.xcdatamodeld */,
+				3A5959311BBFB0080030F5E9 /* Model */,
+				3A5959301BBFB0020030F5E9 /* Views */,
+				3A59592F1BBFAFF10030F5E9 /* Controllers */,
 			);
 			path = Profsquire;
 			sourceTree = "<group>";
@@ -126,6 +132,30 @@
 				3A49313E1BB741B9006516D8 /* Info.plist */,
 			);
 			path = ProfsquireUITests;
+			sourceTree = "<group>";
+		};
+		3A59592F1BBFAFF10030F5E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A49311B1BB741B9006516D8 /* ViewController.swift */,
+				3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3A5959301BBFB0020030F5E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3A5959311BBFB0080030F5E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +291,8 @@
 				3A4931221BB741B9006516D8 /* Profsquire.xcdatamodeld in Sources */,
 				3A49311C1BB741B9006516D8 /* ViewController.swift in Sources */,
 				3A49311A1BB741B9006516D8 /* AppDelegate.swift in Sources */,
+				3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */,
+				3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +519,7 @@
 				3A4931431BB741B9006516D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A4931441BB741B9006516D8 /* Build configuration list for PBXNativeTarget "ProfsquireTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +528,7 @@
 				3A4931461BB741B9006516D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A4931471BB741B9006516D8 /* Build configuration list for PBXNativeTarget "ProfsquireUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +537,7 @@
 				3A4931491BB741B9006516D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
