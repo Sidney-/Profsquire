@@ -19,6 +19,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         searchBar.layer.cornerRadius = 20.0
         searchBar.clipsToBounds = true
         
+        
+        
               }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
