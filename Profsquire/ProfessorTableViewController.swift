@@ -14,6 +14,8 @@ class ProfessorTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.separatorColor = UIColor.clearColor()
+        
+    
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

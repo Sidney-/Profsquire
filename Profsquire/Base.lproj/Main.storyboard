@@ -154,7 +154,7 @@
                                         <constraint firstAttribute="width" secondItem="4d5-Fn-vxS" secondAttribute="height" multiplier="79:21" id="sCb-qk-QIk"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="QPB-fN-gL4">
@@ -165,6 +165,18 @@
                                     </constraints>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="View 2 Graph Button" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-zT-tc3">
+                                    <rect key="frame" x="327" y="27" width="40" height="40"/>
+                                    <animations/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="UV9-MH-Ydc"/>
+                                        <constraint firstAttribute="width" secondItem="Qgj-zT-tc3" secondAttribute="height" multiplier="1:1" id="Z6y-Hu-zRx"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="PHL-7P-OUM" appends="YES" id="Cal-yq-8Pd"/>
+                                    </connections>
+                                </imageView>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -176,10 +188,13 @@
                                 <constraint firstAttribute="bottom" secondItem="QPB-fN-gL4" secondAttribute="bottom" id="I9L-o4-4DU"/>
                                 <constraint firstItem="4d5-Fn-vxS" firstAttribute="top" secondItem="H1k-Ad-2dF" secondAttribute="top" constant="36" id="Nmp-by-oW7"/>
                                 <constraint firstItem="Mkj-SA-4Ab" firstAttribute="top" secondItem="H1k-Ad-2dF" secondAttribute="top" constant="27" id="UHh-6g-FKz"/>
+                                <constraint firstItem="Qgj-zT-tc3" firstAttribute="bottom" secondItem="Mkj-SA-4Ab" secondAttribute="bottom" id="YMe-41-ptd"/>
                                 <constraint firstItem="uJM-I2-ydI" firstAttribute="leading" secondItem="H1k-Ad-2dF" secondAttribute="leading" constant="44" id="Zkd-O1-1Kh"/>
                                 <constraint firstItem="Mkj-SA-4Ab" firstAttribute="centerY" secondItem="4d5-Fn-vxS" secondAttribute="centerY" id="ciU-hI-GlX"/>
                                 <constraint firstItem="4d5-Fn-vxS" firstAttribute="centerX" secondItem="H1k-Ad-2dF" secondAttribute="centerX" id="dMN-Tu-jGL"/>
                                 <constraint firstItem="QPB-fN-gL4" firstAttribute="top" secondItem="uJM-I2-ydI" secondAttribute="bottom" constant="9" id="dxY-cy-u5u"/>
+                                <constraint firstItem="Qgj-zT-tc3" firstAttribute="top" secondItem="Mkj-SA-4Ab" secondAttribute="top" id="kN0-aw-4FS"/>
+                                <constraint firstItem="Qgj-zT-tc3" firstAttribute="trailing" secondItem="H1k-Ad-2dF" secondAttribute="trailingMargin" id="sqZ-GX-E94"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -229,6 +244,11 @@
                         <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="07s-ez-ayz"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="PHL-7P-OUM">
+                    <connections>
+                        <segue destination="pEg-CW-2Vp" kind="presentation" modalTransitionStyle="crossDissolve" id="r5z-5C-aC1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1487.5" y="307.5"/>
         </scene>
@@ -245,66 +265,50 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="329"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="View3 Home Button" translatesAutoresizingMaskIntoConstraints="NO" id="KeX-o6-FBL">
-                                    <rect key="frame" x="8" y="29" width="40" height="40"/>
-                                    <animations/>
-                                    <gestureRecognizers/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="oPP-2H-G8L"/>
-                                    </constraints>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="5ZK-Yj-Urr" appends="YES" id="JSc-PM-6tw"/>
-                                    </connections>
-                                </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="View3 Remove Professor" translatesAutoresizingMaskIntoConstraints="NO" id="219-l1-dzb">
-                                    <rect key="frame" x="315" y="36" width="25" height="25"/>
+                                    <rect key="frame" x="307" y="36" width="25" height="25"/>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="25" id="j5F-1a-2WQ"/>
-                                        <constraint firstAttribute="width" secondItem="219-l1-dzb" secondAttribute="height" multiplier="1:1" id="yTw-LD-eFq"/>
+                                        <constraint firstAttribute="width" secondItem="219-l1-dzb" secondAttribute="height" multiplier="1:1" id="qGj-my-sv1"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="View3 Add Professor" translatesAutoresizingMaskIntoConstraints="NO" id="2Yz-Fo-oBc">
                                     <rect key="frame" x="340" y="36" width="25" height="25"/>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="2Yz-Fo-oBc" secondAttribute="height" multiplier="1:1" id="s4l-gr-FDK"/>
-                                    </constraints>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="View3 Semester" translatesAutoresizingMaskIntoConstraints="NO" id="q7j-Rc-rWi">
-                                    <rect key="frame" x="290" y="36" width="25" height="25"/>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="q7j-Rc-rWi" secondAttribute="height" multiplier="1:1" id="CwR-9y-R30"/>
-                                        <constraint firstAttribute="height" constant="25" id="fS5-Qy-Wsm"/>
-                                        <constraint firstAttribute="width" constant="25" id="oKY-Bt-NNf"/>
+                                        <constraint firstAttribute="width" secondItem="2Yz-Fo-oBc" secondAttribute="height" multiplier="1:1" id="pJa-dV-mjR"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="overall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBJ-Ic-tjj">
                                     <rect key="frame" x="157" y="34" width="61" height="29"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="25"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="View3 Semester" translatesAutoresizingMaskIntoConstraints="NO" id="q7j-Rc-rWi">
+                                    <rect key="frame" x="274" y="36" width="25" height="25"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="q7j-Rc-rWi" secondAttribute="height" multiplier="1:1" id="6qD-uk-FTL"/>
+                                        <constraint firstAttribute="width" constant="25" id="hAM-gc-Hmu"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="KeX-o6-FBL" firstAttribute="top" secondItem="pb9-W5-Lw5" secondAttribute="top" constant="29" id="4x3-lA-cBJ"/>
-                                <constraint firstItem="2Yz-Fo-oBc" firstAttribute="bottom" secondItem="219-l1-dzb" secondAttribute="bottom" id="BRf-mr-OPa"/>
-                                <constraint firstItem="2Yz-Fo-oBc" firstAttribute="top" secondItem="219-l1-dzb" secondAttribute="top" id="FjM-Au-8gr"/>
-                                <constraint firstItem="2Yz-Fo-oBc" firstAttribute="leading" secondItem="219-l1-dzb" secondAttribute="trailing" id="GVs-ka-cwP"/>
-                                <constraint firstItem="KeX-o6-FBL" firstAttribute="centerY" secondItem="q7j-Rc-rWi" secondAttribute="centerY" id="NqM-tM-aMv"/>
+                                <constraint firstItem="2Yz-Fo-oBc" firstAttribute="leading" secondItem="219-l1-dzb" secondAttribute="trailing" constant="8" symbolic="YES" id="KJI-JA-jrh"/>
                                 <constraint firstItem="jBJ-Ic-tjj" firstAttribute="centerX" secondItem="pb9-W5-Lw5" secondAttribute="centerX" id="Pi9-2g-22y"/>
-                                <constraint firstAttribute="trailing" secondItem="q7j-Rc-rWi" secondAttribute="trailing" constant="60" id="RG6-gy-L7o"/>
-                                <constraint firstItem="219-l1-dzb" firstAttribute="top" secondItem="q7j-Rc-rWi" secondAttribute="top" id="VZg-ya-TjY"/>
-                                <constraint firstItem="q7j-Rc-rWi" firstAttribute="top" secondItem="pb9-W5-Lw5" secondAttribute="top" constant="36" id="W7b-Rh-9By"/>
-                                <constraint firstItem="jBJ-Ic-tjj" firstAttribute="centerY" secondItem="q7j-Rc-rWi" secondAttribute="centerY" id="bma-9E-0Kq"/>
-                                <constraint firstItem="KeX-o6-FBL" firstAttribute="leading" secondItem="pb9-W5-Lw5" secondAttribute="leadingMargin" id="gPN-so-O3H"/>
-                                <constraint firstItem="219-l1-dzb" firstAttribute="leading" secondItem="q7j-Rc-rWi" secondAttribute="trailing" id="iK3-hq-Vxh"/>
-                                <constraint firstAttribute="trailing" secondItem="2Yz-Fo-oBc" secondAttribute="trailing" constant="10" id="jCI-5o-i24"/>
-                                <constraint firstItem="219-l1-dzb" firstAttribute="bottom" secondItem="q7j-Rc-rWi" secondAttribute="bottom" id="ocF-zP-8Ix"/>
+                                <constraint firstAttribute="trailing" secondItem="2Yz-Fo-oBc" secondAttribute="trailing" constant="10" id="Wh9-Os-8nj"/>
+                                <constraint firstItem="q7j-Rc-rWi" firstAttribute="leading" secondItem="jBJ-Ic-tjj" secondAttribute="trailing" constant="56" id="XPS-nO-YT2"/>
+                                <constraint firstItem="2Yz-Fo-oBc" firstAttribute="bottom" secondItem="219-l1-dzb" secondAttribute="bottom" id="aak-F8-zAx"/>
+                                <constraint firstItem="219-l1-dzb" firstAttribute="bottom" secondItem="q7j-Rc-rWi" secondAttribute="bottom" id="bF4-qx-96c"/>
+                                <constraint firstItem="2Yz-Fo-oBc" firstAttribute="top" secondItem="219-l1-dzb" secondAttribute="top" id="h4c-tD-Hws"/>
+                                <constraint firstItem="q7j-Rc-rWi" firstAttribute="top" secondItem="pb9-W5-Lw5" secondAttribute="top" constant="36" id="hFu-5M-siB"/>
+                                <constraint firstItem="219-l1-dzb" firstAttribute="leading" secondItem="q7j-Rc-rWi" secondAttribute="trailing" constant="8" symbolic="YES" id="wnL-BS-ZOC"/>
+                                <constraint firstItem="219-l1-dzb" firstAttribute="top" secondItem="q7j-Rc-rWi" secondAttribute="top" id="yLj-H4-1wK"/>
+                                <constraint firstItem="q7j-Rc-rWi" firstAttribute="centerY" secondItem="jBJ-Ic-tjj" secondAttribute="centerY" id="z6m-yi-44Y"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -430,11 +434,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZk-gc-IUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="5ZK-Yj-Urr">
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="xlL-3y-pGY"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1934.5" y="307.5"/>
         </scene>
@@ -444,12 +443,13 @@
         <image name="Profsquire Icon (White)" width="120" height="120"/>
         <image name="Profsquire-Background" width="2057" height="3658"/>
         <image name="Profsquire-View1-Logo" width="1213" height="1223"/>
+        <image name="View 2 Graph Button" width="258" height="266"/>
         <image name="View3 Add Professor" width="186" height="186"/>
         <image name="View3 Home Button" width="258" height="266"/>
         <image name="View3 Remove Professor" width="186" height="186"/>
         <image name="View3 Semester" width="186" height="186"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xlL-3y-pGY"/>
+        <segue reference="r5z-5C-aC1"/>
     </inferredMetricsTieBreakers>
 </document>
