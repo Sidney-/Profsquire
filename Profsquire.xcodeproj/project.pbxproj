@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0844C21C2F65EF00FDFB04 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0844C11C2F65EF00FDFB04 /* NavigationController.swift */; };
+		3A22C5891C2D17590014D34F /* AllCourses.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A22C5881C2D17590014D34F /* AllCourses.json */; };
+		3A22C58B1C2D175E0014D34F /* AllProfessors.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A22C58A1C2D175E0014D34F /* AllProfessors.json */; };
+		3A22C58D1C2D17D10014D34F /* GradeDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C58C1C2D17D10014D34F /* GradeDistribution.swift */; };
+		3A22C58F1C2D17FB0014D34F /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C58E1C2D17FB0014D34F /* CourseData.swift */; };
+		3A22C5911C2D18190014D34F /* GradeDistributionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C5901C2D18190014D34F /* GradeDistributionService.swift */; };
+		3A22C5931C2D18390014D34F /* GradeDistributionServiceProfessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C5921C2D18380014D34F /* GradeDistributionServiceProfessors.swift */; };
+		3A22C5951C2D18520014D34F /* ProfessorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C5941C2D18520014D34F /* ProfessorData.swift */; };
+		3A22C5971C2D18870014D34F /* ProfessorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C5961C2D18870014D34F /* ProfessorList.swift */; };
+		3A22C5A01C2D1C3D0014D34F /* GlobalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C59F1C2D1C3D0014D34F /* GlobalSplitViewController.swift */; };
+		3A22C5A21C2D1CBB0014D34F /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22C5A11C2D1CBB0014D34F /* MasterTableViewController.swift */; };
 		3A49311A1BB741B9006516D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931191BB741B9006516D8 /* AppDelegate.swift */; };
 		3A49311C1BB741B9006516D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49311B1BB741B9006516D8 /* ViewController.swift */; };
 		3A49311F1BB741B9006516D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49311D1BB741B9006516D8 /* Main.storyboard */; };
@@ -15,8 +26,10 @@
 		3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */; };
 		3A4931321BB741B9006516D8 /* ProfsquireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931311BB741B9006516D8 /* ProfsquireTests.swift */; };
 		3A49313D1BB741B9006516D8 /* ProfsquireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */; };
-		3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */; };
+		3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */; };
+		3AE07F6D1C2E458600C6EB35 /* GradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */; };
+		3AE07F6F1C2E465C00C6EB35 /* SeparatedSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A0844C11C2F65EF00FDFB04 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		3A22C5881C2D17590014D34F /* AllCourses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllCourses.json; sourceTree = "<group>"; };
+		3A22C58A1C2D175E0014D34F /* AllProfessors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllProfessors.json; sourceTree = "<group>"; };
+		3A22C58C1C2D17D10014D34F /* GradeDistribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeDistribution.swift; sourceTree = "<group>"; };
+		3A22C58E1C2D17FB0014D34F /* CourseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		3A22C5901C2D18190014D34F /* GradeDistributionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeDistributionService.swift; sourceTree = "<group>"; };
+		3A22C5921C2D18380014D34F /* GradeDistributionServiceProfessors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeDistributionServiceProfessors.swift; sourceTree = "<group>"; };
+		3A22C5941C2D18520014D34F /* ProfessorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorData.swift; sourceTree = "<group>"; };
+		3A22C5961C2D18870014D34F /* ProfessorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorList.swift; sourceTree = "<group>"; };
+		3A22C59F1C2D1C3D0014D34F /* GlobalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSplitViewController.swift; sourceTree = "<group>"; };
+		3A22C5A11C2D1CBB0014D34F /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		3A4931161BB741B9006516D8 /* Profsquire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profsquire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4931191BB741B9006516D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A49311B1BB741B9006516D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +77,8 @@
 		3A49313E1BB741B9006516D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewController.swift; sourceTree = "<group>"; };
 		3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
+		3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesTableViewCell.swift; sourceTree = "<group>"; };
+		3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatedSections.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4931191BB741B9006516D8 /* AppDelegate.swift */,
-				3A49311D1BB741B9006516D8 /* Main.storyboard */,
 				3A4931231BB741B9006516D8 /* Assets.xcassets */,
-				3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */,
 				3A4931281BB741B9006516D8 /* Info.plist */,
 				3A4931201BB741B9006516D8 /* Profsquire.xcdatamodeld */,
 				3A5959311BBFB0080030F5E9 /* Model */,
@@ -138,7 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				3A49311B1BB741B9006516D8 /* ViewController.swift */,
+				3A22C5A11C2D1CBB0014D34F /* MasterTableViewController.swift */,
 				3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */,
+				3A22C59F1C2D1C3D0014D34F /* GlobalSplitViewController.swift */,
+				3A0844C11C2F65EF00FDFB04 /* NavigationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */,
+				3A49311D1BB741B9006516D8 /* Main.storyboard */,
+				3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */,
+				3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -154,6 +184,15 @@
 		3A5959311BBFB0080030F5E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A22C5881C2D17590014D34F /* AllCourses.json */,
+				3A22C58A1C2D175E0014D34F /* AllProfessors.json */,
+				3A22C58C1C2D17D10014D34F /* GradeDistribution.swift */,
+				3A22C58E1C2D17FB0014D34F /* CourseData.swift */,
+				3A22C5901C2D18190014D34F /* GradeDistributionService.swift */,
+				3A22C5921C2D18380014D34F /* GradeDistributionServiceProfessors.swift */,
+				3A22C5941C2D18520014D34F /* ProfessorData.swift */,
+				3A22C5961C2D18870014D34F /* ProfessorList.swift */,
+				3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -225,7 +264,7 @@
 				TargetAttributes = {
 					3A4931151BB741B9006516D8 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = XLUUE8NN5G;
+						DevelopmentTeam = 45FL8MLYE4;
 					};
 					3A49312C1BB741B9006516D8 = {
 						CreatedOnToolsVersion = 7.0;
@@ -262,7 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A22C5891C2D17590014D34F /* AllCourses.json in Resources */,
 				3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */,
+				3A22C58B1C2D175E0014D34F /* AllProfessors.json in Resources */,
 				3A4931241BB741B9006516D8 /* Assets.xcassets in Resources */,
 				3A49311F1BB741B9006516D8 /* Main.storyboard in Resources */,
 			);
@@ -289,11 +330,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A22C58F1C2D17FB0014D34F /* CourseData.swift in Sources */,
 				3A4931221BB741B9006516D8 /* Profsquire.xcdatamodeld in Sources */,
+				3A22C58D1C2D17D10014D34F /* GradeDistribution.swift in Sources */,
+				3AE07F6F1C2E465C00C6EB35 /* SeparatedSections.swift in Sources */,
+				3A22C5A01C2D1C3D0014D34F /* GlobalSplitViewController.swift in Sources */,
+				3A0844C21C2F65EF00FDFB04 /* NavigationController.swift in Sources */,
+				3A22C5971C2D18870014D34F /* ProfessorList.swift in Sources */,
+				3A22C5951C2D18520014D34F /* ProfessorData.swift in Sources */,
+				3AE07F6D1C2E458600C6EB35 /* GradesTableViewCell.swift in Sources */,
 				3A49311C1BB741B9006516D8 /* ViewController.swift in Sources */,
+				3A22C5931C2D18390014D34F /* GradeDistributionServiceProfessors.swift in Sources */,
 				3A49311A1BB741B9006516D8 /* AppDelegate.swift in Sources */,
+				3A22C5911C2D18190014D34F /* GradeDistributionService.swift in Sources */,
 				3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */,
 				3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */,
+				3A22C5A21C2D1CBB0014D34F /* MasterTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

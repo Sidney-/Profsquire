@@ -58,6 +58,8 @@ class ProfessorTableViewCell: UITableViewCell {
         CardViewImage.contentMode = UIViewContentMode.ScaleAspectFit;
         CardViewImage.backgroundColor = UIColor.whiteColor()
     }
+    
+    
 
 
 }
