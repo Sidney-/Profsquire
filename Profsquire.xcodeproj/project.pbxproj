@@ -30,6 +30,7 @@
 		3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */; };
 		3AE07F6D1C2E458600C6EB35 /* GradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */; };
 		3AE07F6F1C2E465C00C6EB35 /* SeparatedSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */; };
+		59D1E4831C30DCDE004A445E /* Semesters(Spring13-Fall14).json in Resources */ = {isa = PBXBuildFile; fileRef = 59D1E4821C30DCDE004A445E /* Semesters(Spring13-Fall14).json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
 		3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesTableViewCell.swift; sourceTree = "<group>"; };
 		3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatedSections.swift; sourceTree = "<group>"; };
+		59D1E4821C30DCDE004A445E /* Semesters(Spring13-Fall14).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Semesters(Spring13-Fall14).json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				3A22C5881C2D17590014D34F /* AllCourses.json */,
 				3A22C58A1C2D175E0014D34F /* AllProfessors.json */,
+				59D1E4821C30DCDE004A445E /* Semesters(Spring13-Fall14).json */,
 				3A22C58C1C2D17D10014D34F /* GradeDistribution.swift */,
 				3A22C58E1C2D17FB0014D34F /* CourseData.swift */,
 				3A22C5901C2D18190014D34F /* GradeDistributionService.swift */,
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A22C5891C2D17590014D34F /* AllCourses.json in Resources */,
+				59D1E4831C30DCDE004A445E /* Semesters(Spring13-Fall14).json in Resources */,
 				3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */,
 				3A22C58B1C2D175E0014D34F /* AllProfessors.json in Resources */,
 				3A4931241BB741B9006516D8 /* Assets.xcassets in Resources */,

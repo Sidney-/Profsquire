@@ -15,7 +15,7 @@ class GradeDistributionService {
     
     init() {
         
-        if let path = NSBundle.mainBundle().pathForResource("AllCourses", ofType: "json") {
+        if let path = NSBundle.mainBundle().pathForResource("Semesters(Spring13-Fall14)", ofType: "json") {
             do {
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 do {

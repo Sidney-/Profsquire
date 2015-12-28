@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfessorTableViewController: UITableViewController {
-    
+    /*
     //Variables.
     var sections: [String] = []
     var gradeDistributionBySections: [[CourseData]] = []
@@ -436,6 +436,7 @@ class ProfessorTableViewController: UITableViewController {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     }
+    */
     */
     
 }

@@ -26,7 +26,7 @@ struct GradeDistribution {
         }
         
         //Sorting array a to z in order to fiter the duplicated course's names.
-        courseDataArray.sortInPlace { $0.course < $1.course }
+        //courseDataArray.sortInPlace { $0.course < $1.course }
         
         
         //Comparing two ordered course's names, if it's different, add to noneDuplicatedArray.

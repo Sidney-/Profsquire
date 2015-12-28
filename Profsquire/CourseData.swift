@@ -12,7 +12,7 @@ import Foundation
 struct CourseData {
     
     let course: String?
-    let professorId: Int?
+    let instructor: Int?
     let a: Int?
     let b: Int?
     let c: Int?
@@ -21,12 +21,21 @@ struct CourseData {
     let w: Int?
     let total: Int?
     let semester: String?
+    let section: Int?
+    let department: String?
+    let subject: String?
     let year: Int?
+    let withdrawalRate: Bool?
+    let instructorGPA: Float?
+    let overallInstructorGPA: Float?
     
     init(courseDataDictionary:[String:AnyObject]) {
         
         course = courseDataDictionary["course"] as? String
-        professorId = courseDataDictionary["professor_id"] as? Int
+        instructor = courseDataDictionary["instuctor"] as? Int
+        instructorGPA = courseDataDictionary["instructorGPA"] as? Float
+        overallInstructorGPA = courseDataDictionary["overallInstructorGPA"] as? Float
+        withdrawalRate = courseDataDictionary["withdrawalRate"] as? Bool
         a = courseDataDictionary["a"] as? Int
         b = courseDataDictionary["b"] as? Int
         c = courseDataDictionary["c"] as? Int
@@ -35,6 +44,9 @@ struct CourseData {
         w = courseDataDictionary["w"] as? Int
         total = courseDataDictionary["total"] as? Int
         semester = courseDataDictionary["semester"] as? String
+        section = courseDataDictionary["section"] as? Int
+        department = courseDataDictionary["department"] as? String
+        subject = courseDataDictionary["subject"] as? String
         year = courseDataDictionary["year"] as? Int
     }
 }

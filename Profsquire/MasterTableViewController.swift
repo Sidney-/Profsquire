@@ -9,7 +9,7 @@
 import UIKit
 
 class MasterTableViewController: UITableViewController {
-    
+    /*
     
     @IBOutlet weak var scope: UISegmentedControl!
     //Variables
@@ -339,4 +339,6 @@ extension MasterTableViewController: UISearchResultsUpdating {
             
         }
     }
-}*/
+    */
+*/
+}
