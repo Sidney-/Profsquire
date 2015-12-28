@@ -31,6 +31,7 @@
 		3AE07F6D1C2E458600C6EB35 /* GradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */; };
 		3AE07F6F1C2E465C00C6EB35 /* SeparatedSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */; };
 		59D1E4831C30DCDE004A445E /* Semesters(Spring13-Fall14).json in Resources */ = {isa = PBXBuildFile; fileRef = 59D1E4821C30DCDE004A445E /* Semesters(Spring13-Fall14).json */; };
+		59D1E4851C30EDC6004A445E /* JSONParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1E4841C30EDC6004A445E /* JSONParse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesTableViewCell.swift; sourceTree = "<group>"; };
 		3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatedSections.swift; sourceTree = "<group>"; };
 		59D1E4821C30DCDE004A445E /* Semesters(Spring13-Fall14).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Semesters(Spring13-Fall14).json"; sourceTree = "<group>"; };
+		59D1E4841C30EDC6004A445E /* JSONParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParse.swift; path = ../../JSONParse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				3A22C5941C2D18520014D34F /* ProfessorData.swift */,
 				3A22C5961C2D18870014D34F /* ProfessorList.swift */,
 				3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */,
+				59D1E4841C30EDC6004A445E /* JSONParse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				3A4931221BB741B9006516D8 /* Profsquire.xcdatamodeld in Sources */,
 				3A22C58D1C2D17D10014D34F /* GradeDistribution.swift in Sources */,
 				3AE07F6F1C2E465C00C6EB35 /* SeparatedSections.swift in Sources */,
+				59D1E4851C30EDC6004A445E /* JSONParse.swift in Sources */,
 				3A22C5A01C2D1C3D0014D34F /* GlobalSplitViewController.swift in Sources */,
 				3A0844C21C2F65EF00FDFB04 /* NavigationController.swift in Sources */,
 				3A22C5971C2D18870014D34F /* ProfessorList.swift in Sources */,

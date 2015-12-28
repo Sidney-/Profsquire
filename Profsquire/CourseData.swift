@@ -12,7 +12,7 @@ import Foundation
 struct CourseData {
     
     let course: String?
-    let instructor: Int?
+    let instructor: String?
     let a: Int?
     let b: Int?
     let c: Int?
@@ -25,28 +25,22 @@ struct CourseData {
     let department: String?
     let subject: String?
     let year: Int?
-    let withdrawalRate: Bool?
-    let instructorGPA: Float?
-    let overallInstructorGPA: Float?
     
     init(courseDataDictionary:[String:AnyObject]) {
         
-        course = courseDataDictionary["course"] as? String
-        instructor = courseDataDictionary["instuctor"] as? Int
-        instructorGPA = courseDataDictionary["instructorGPA"] as? Float
-        overallInstructorGPA = courseDataDictionary["overallInstructorGPA"] as? Float
-        withdrawalRate = courseDataDictionary["withdrawalRate"] as? Bool
-        a = courseDataDictionary["a"] as? Int
-        b = courseDataDictionary["b"] as? Int
-        c = courseDataDictionary["c"] as? Int
-        d = courseDataDictionary["d"] as? Int
-        f = courseDataDictionary["f"] as? Int
-        w = courseDataDictionary["w"] as? Int
-        total = courseDataDictionary["total"] as? Int
-        semester = courseDataDictionary["semester"] as? String
-        section = courseDataDictionary["section"] as? Int
-        department = courseDataDictionary["department"] as? String
-        subject = courseDataDictionary["subject"] as? String
-        year = courseDataDictionary["year"] as? Int
+        course = courseDataDictionary["COURSE"] as? String
+        instructor = courseDataDictionary["INSTRUCTOR"] as? String
+        a = courseDataDictionary["A"] as? Int
+        b = courseDataDictionary["B"] as? Int
+        c = courseDataDictionary["C"] as? Int
+        d = courseDataDictionary["D"] as? Int
+        f = courseDataDictionary["F"] as? Int
+        w = courseDataDictionary["W"] as? Int
+        total = courseDataDictionary["TOTAL"] as? Int
+        semester = courseDataDictionary["SEMESTER"] as? String
+        section = courseDataDictionary["SECTION"] as? Int
+        department = courseDataDictionary["DEPARTMENT"] as? String
+        subject = courseDataDictionary["SUBJECT"] as? String
+        year = courseDataDictionary["YEAR"] as? Int
     }
 }

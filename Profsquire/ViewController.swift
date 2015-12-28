@@ -17,12 +17,15 @@ class ViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        deleteAllData()
+        
         allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
-        for (var i = 0; i < 5; i++){
-     
+
+        for (var i = 0; i < allData.count; i++){
+
             let newTerm = NSEntityDescription.insertNewObjectForEntityForName("Term", inManagedObjectContext: context) as NSManagedObject
         
             newTerm.setValue(allData[i].year, forKey: "year")
@@ -63,7 +66,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
             
             if results.count > 0 {
                 for result: AnyObject in results{
-                    print(result.year)
+                    print(result)
                 }
             }else{ print("No Aliens")}
         } catch {
