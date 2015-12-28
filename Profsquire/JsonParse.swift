@@ -1,19 +1,22 @@
 //
-//  ViewController.swift
+//  JsonParse.swift
 //  Profsquire
 //
-//  Created by Riyang Liu on 9/26/15.
+//  Created by Riyang Liu on 12/27/15.
 //  Copyright © 2015 Profsquire. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-class ViewController: UIViewController, UISearchBarDelegate {
-    @IBOutlet weak var searchBar: UISearchBar!
+class JsonParse {
     
-    var allData: [CourseData] = []
-
+    init() {
+        
+        
+    }
+    /*var allData: [CourseData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,34 +26,34 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
-
+        
         /*for (var i = 0; i < allData.count; i++){
-
-            let newTerm = NSEntityDescription.insertNewObjectForEntityForName("Term", inManagedObjectContext: context) as NSManagedObject
         
-            newTerm.setValue(allData[i].year, forKey: "year")
-            newTerm.setValue(allData[i].semester, forKey: "semester")
-            newTerm.setValue(allData[i].department, forKey: "department")
-            newTerm.setValue(allData[i].subject, forKey: "subject")
-            newTerm.setValue(allData[i].course, forKey: "course")
-            newTerm.setValue(allData[i].section, forKey: "section")
-            newTerm.setValue(allData[i].instructor, forKey: "instructor")
-            newTerm.setValue(allData[i].a, forKey: "a")
-            newTerm.setValue(allData[i].b, forKey: "b")
-            newTerm.setValue(allData[i].c, forKey: "c")
-            newTerm.setValue(allData[i].d, forKey: "d")
-            newTerm.setValue(allData[i].f, forKey: "f")
-            newTerm.setValue(allData[i].w, forKey: "w")
-            newTerm.setValue(allData[i].total, forKey: "total")
-            newTerm.setValue(instructorGPA(allData[i].a!, b: allData[i].b!, c: allData[i].c!, d: allData[i].d!, f: allData[i].f!), forKey: "instructorGPA")
-            newTerm.setValue(withdrawalRate( allData[i].w!, totalStudents: allData[i].total!), forKey: "withdrawalRate")
+        let newTerm = NSEntityDescription.insertNewObjectForEntityForName("Term", inManagedObjectContext: context) as NSManagedObject
         
-            do {
-                try context.save()
-            } catch {
-                print("Space Aliens");
-            }
-            
+        newTerm.setValue(allData[i].year, forKey: "year")
+        newTerm.setValue(allData[i].semester, forKey: "semester")
+        newTerm.setValue(allData[i].department, forKey: "department")
+        newTerm.setValue(allData[i].subject, forKey: "subject")
+        newTerm.setValue(allData[i].course, forKey: "course")
+        newTerm.setValue(allData[i].section, forKey: "section")
+        newTerm.setValue(allData[i].instructor, forKey: "instructor")
+        newTerm.setValue(allData[i].a, forKey: "a")
+        newTerm.setValue(allData[i].b, forKey: "b")
+        newTerm.setValue(allData[i].c, forKey: "c")
+        newTerm.setValue(allData[i].d, forKey: "d")
+        newTerm.setValue(allData[i].f, forKey: "f")
+        newTerm.setValue(allData[i].w, forKey: "w")
+        newTerm.setValue(allData[i].total, forKey: "total")
+        newTerm.setValue(instructorGPA(allData[i].a!, b: allData[i].b!, c: allData[i].c!, d: allData[i].d!, f: allData[i].f!), forKey: "instructorGPA")
+        newTerm.setValue(withdrawalRate( allData[i].w!, totalStudents: allData[i].total!), forKey: "withdrawalRate")
+        
+        do {
+        try context.save()
+        } catch {
+        print("Space Aliens");
+        }
+        
         }*/
         
         //let request = NSFetchRequest(entityName: "Term")
@@ -76,7 +79,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         
         
-      
+        
         /*self.searchBar.layer.borderColor = UIColor.whiteColor().CGColor
         self.searchBar.layer.borderWidth = 0.5
         searchBar.layer.cornerRadius = 20.0
@@ -85,7 +88,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         //hide navigation bar
         navigationController?.navigationBarHidden = true
         
-        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -124,7 +127,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
     func withdrawalRate( w:Int, totalStudents:Int ) -> Float{
         return ((Float(w)/Float(totalStudents)) * 100)
     }
-
-
+    
+*/
+    
+    
 }
-

@@ -26,6 +26,7 @@
 		3A4931271BB741B9006516D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4931251BB741B9006516D8 /* LaunchScreen.storyboard */; };
 		3A4931321BB741B9006516D8 /* ProfsquireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4931311BB741B9006516D8 /* ProfsquireTests.swift */; };
 		3A49313D1BB741B9006516D8 /* ProfsquireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */; };
+		3A4B51F01C30F2EE005E8BC8 /* JsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B51EF1C30F2EE005E8BC8 /* JsonParse.swift */; };
 		3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */; };
 		3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */; };
 		3AE07F6D1C2E458600C6EB35 /* GradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */; };
@@ -76,6 +77,7 @@
 		3A4931381BB741B9006516D8 /* ProfsquireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfsquireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A49313C1BB741B9006516D8 /* ProfsquireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfsquireUITests.swift; sourceTree = "<group>"; };
 		3A49313E1BB741B9006516D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4B51EF1C30F2EE005E8BC8 /* JsonParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParse.swift; sourceTree = "<group>"; };
 		3A5959321BBFB0670030F5E9 /* ProfessorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewController.swift; sourceTree = "<group>"; };
 		3A5959351BBFB60D0030F5E9 /* ProfessorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorTableViewCell.swift; sourceTree = "<group>"; };
 		3AE07F6C1C2E458600C6EB35 /* GradesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				3A22C5941C2D18520014D34F /* ProfessorData.swift */,
 				3A22C5961C2D18870014D34F /* ProfessorList.swift */,
 				3AE07F6E1C2E465C00C6EB35 /* SeparatedSections.swift */,
+				3A4B51EF1C30F2EE005E8BC8 /* JsonParse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				3A5959331BBFB0670030F5E9 /* ProfessorTableViewController.swift in Sources */,
 				3A5959361BBFB60D0030F5E9 /* ProfessorTableViewCell.swift in Sources */,
 				3A22C5A21C2D1CBB0014D34F /* MasterTableViewController.swift in Sources */,
+				3A4B51F01C30F2EE005E8BC8 /* JsonParse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
