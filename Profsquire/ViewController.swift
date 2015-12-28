@@ -19,7 +19,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         //deleteAllData()
         
-        allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
+        //allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
@@ -65,15 +65,35 @@ class ViewController: UIViewController, UISearchBarDelegate {
             let results = try context.executeFetchRequest(request)
             
             if results.count > 0 {
-                for result: AnyObject in results{
-                    print(result)
+                for result: AnyObject in results as! [NSManagedObject]{
+                   print(result.valueForKey("year"))
                 }
             }else{ print("No Aliens")}
         } catch {
             print("Space Aliens: Part 2");
         }
         
+        /*do{
+            
+            let request = NSFetchRequest(entityName: "Term")
+            let results = try context.executeFetchRequest(request)
+            
+            if results.count > 0 {
+                
+                for item in results as! [NSManagedObject]{
+                    
+                    let name = item.valueForKey("a")
+                    let password = item.valueForKey("instructor")
+                    
+                    print(name!, password!)
+                }
+            }
+            
+        }catch{
+            
+            print("Erorr, data not read!")
         
+        }*/
         
         
       
