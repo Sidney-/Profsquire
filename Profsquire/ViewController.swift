@@ -16,8 +16,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        deleteAllData()
+        print("哈哈")
         
         allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
         
