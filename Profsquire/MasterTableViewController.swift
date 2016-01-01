@@ -7,39 +7,51 @@
 //
 
 import UIKit
+import CoreData
 
 class MasterTableViewController: UITableViewController {
-    /*
     
-    @IBOutlet weak var scope: UISegmentedControl!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
+    
+    var showFilterOfCourse = false
+    var filterDepartmentOn = false
+    var filterCourseOn = false
+    
+    var departmentTransation: String = ""
+    var courseTransation: String = ""
+    var department:[String] = []
+    var noneDuplicatedDepartment:[String] = []
+    var pushClosure:(()->())?
     //Variables
     let searchController = UISearchController(searchResultsController: nil)
+
+    var instructorArray:[String] = []
+    var noneDuplicatedInstructorArray:[String] = []
+    var filteredProfessors = [String]()
     
-    var courseData:[CourseData] = []
-    var allCourseData:[CourseData] = []
-    var professorData:[ProfessorData] = []
-    var allprofessorData:[ProfessorData] = []
-    var filteredCourses = [CourseData]()
-    var filteredProfessors = [ProfessorData]()
     
-    //picker view
-    var pickerViewArray = ["Math", "Art", "Science", "Business"]
-    
-    var scopeSelected = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        self.tableView.tableFooterView = UIView()
         
+        //Parsing instructor data
+        instructorArray = ParsingDataFromCoreData().ParseData("instructor")
+        noneDuplicatedInstructorArray = GetNonduplicatedData().getNoneDuplicatedProfessorList(instructorArray)
+        
+        //department = ParsingDataFromCoreData().ParseData("department")
+        //noneDuplicatedDepartment = GetNonduplicatedData().getNoneDuplicatedProfessorList(department)
+
+
         
         //Preparing all the course data.
-        courseData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).noneDuplicatedDataArray
+        /*courseData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).noneDuplicatedDataArray
             allCourseData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
         
         
         //Preparing all the professor data.
         
-        professorData = ProfessorList(professorData: GradeDistributionServiceProfessors().jsonResultArray).noneDuplicatedProfessorList
+        professorData = ProfessorList(professorData: GradeDistributionServiceProfessors().jsonResultArray).noneDuplicatedProfessorList*/
             
         
         
@@ -68,8 +80,62 @@ class MasterTableViewController: UITableViewController {
         //tableview background image
         tableView.backgroundView = UIImageView(image: UIImage(named: "Profsquire-Background"))
         
+        //left baritem color
+        navigationController!.navigationBar.barStyle = UIBarStyle.Black
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+
+        if showFilterOfCourse == true {
+        pushClosure?()
+            
+            showFilterOfCourse = false
+        }
+        
+        if departmentTransation == "All Departments" {
+            
+            instructorArray = ParsingDataFromCoreData().ParseData("instructor")
+            noneDuplicatedInstructorArray = GetNonduplicatedData().getNoneDuplicatedProfessorList(instructorArray)
+            filterButton.title = "Filter"
+            filterButton.titlePositionAdjustmentForBarMetrics(.Default)
+
+        } else {
+            
+        
+        if filterCourseOn == true {
+            
+            
+            if courseTransation != "" {
+                print(courseTransation)
+                if courseTransation == "All Courses" {
+                    print(departmentTransation)
+                    instructorArray = ParsingDataFromCoreData().filterData("instructor", objectCategory: "department", object: departmentTransation)
+                    noneDuplicatedInstructorArray = GetNonduplicatedData().getNoneDuplicatedProfessorList(instructorArray)
+                    print(noneDuplicatedInstructorArray)
+                    filterButton.title = departmentTransation
+                    filterButton.titlePositionAdjustmentForBarMetrics(.Default)
+
+                    
+                } else {
+                    
+                    instructorArray = ParsingDataFromCoreData().filterData("instructor", objectCategory: "course", object: courseTransation)
+                    noneDuplicatedInstructorArray = GetNonduplicatedData().getNoneDuplicatedProfessorList(instructorArray)
+                    filterButton.title = courseTransation
+                    filterButton.titlePositionAdjustmentForBarMetrics(.Default)
+                    
+                }
+            }
+        
+        }
+            
+            
+        }
+        
+        tableView.reloadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -88,42 +154,38 @@ class MasterTableViewController: UITableViewController {
         
         if searchController.active && searchController.searchBar.text != "" {
             
-            if scopeSelected == 0 {
+            //if scopeSelected == 0 {
                 
-            return filteredCourses.count
+            return filteredProfessors.count
                 
-            }
+            //}
             
-            if scopeSelected == 1 {
+            //if scopeSelected == 1 {
                 
-                return filteredProfessors.count
-            }
+                //return noneDuplicatedInstructorArray.count
+            //}
         }
-        
-        return courseData.count
+        return noneDuplicatedInstructorArray.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        let course: CourseData
-        let professor: ProfessorData
-        
-        if scopeSelected == 0 {
+        let professor: String
+        //if scopeSelected == 0 {
         
         if searchController.active && searchController.searchBar.text != "" {
-            course = filteredCourses[indexPath.row]
+            professor = filteredProfessors[indexPath.row]
         } else {
-            course = courseData[indexPath.row]
+            professor = noneDuplicatedInstructorArray[indexPath.row]
         }
         
-        cell.textLabel?.text = course.course?.lowercaseString
+        cell.textLabel?.text = professor.lowercaseString
             cell.textLabel?.textColor = UIColor.darkGrayColor()
-            
-        }
+       
         
-        if scopeSelected == 1 {
+        /*if scopeSelected == 1 {
             
             if searchController.active && searchController.searchBar.text != "" {
                 
@@ -142,17 +204,37 @@ class MasterTableViewController: UITableViewController {
         //cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
         //cell.backgroundView?.tintColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
         //cell.backgroundColor = UIColor(white: 1, alpha: 0.7)
-        //cell.backgroundView?.backgroundColor = UIColor(white: 1, alpha: 0.7)
-        addBlurEffect()
+        //cell.backgroundView?.backgroundColor = UIColor(white: 1, alpha: 0.7)*/
+        
         return cell
-    }
-    
+}
+
     //Transfering all the data from the master view controller to the detail view controller.
     //Letting the detail master view know which course that the user want to check.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "Grades" {
+        if segue.identifier == "FilterCourse" {
             
+            
+        //if let indexPath = self.tableView.indexPathForSelectedRow {
+            
+            let object: String
+            
+            //object = noneDuplicatedDepartment[indexPath.row]
+            object = departmentTransation
+            
+            
+            let controller = (segue.destinationViewController as! UINavigationController).topViewController as! FilterCourseTableViewController
+            controller.departmentTransation = object
+            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+            controller.navigationItem.leftItemsSupplementBackButton = true
+           
+       // }
+        }
+
+        
+        /*if segue.identifier == "Grades" {
+        
             if (scopeSelected == 0) {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -204,50 +286,63 @@ class MasterTableViewController: UITableViewController {
                     controller.scopeTransation = scopeSelected
                 }
             }
-        }
+        }*/
+        
+        
+        /*if segue.identifier == "FilterDepartment" {
+            
+            if filterDepartmentOn == true {
+            print(filterDepartmentOn)
+            pushClosure = {
+                self.performSegueWithIdentifier("FilterCourse", sender:nil)
+            
+                }
+                filterDepartmentOn = false
+            }          }*/
+    }
+    
+    @IBAction func unwindWithSelectedDepartment(segue:UIStoryboardSegue) {
+        
+        if showFilterOfCourse == true {
+            pushClosure = {
+                self.performSegueWithIdentifier("FilterCourse", sender:nil)
+                
+            }
+            
+            }
+        
+    }
+    
+    @IBAction func unwindWithSelectedCourse(segue:UIStoryboardSegue) {
+        
+        
     }
     
     
+    
     //Searching the text that the user types in.
-    func filterContentForSearchText(searchText: String, scope: String = "course") {
+    func filterContentForSearchText(searchText: String, scope: String = "all") {
         
-        if scopeSelected == 0 {
+        //if scopeSelected == 0 {
         
-        filteredCourses = courseData.filter { CourseData in
+        filteredProfessors = noneDuplicatedInstructorArray.filter { professor in
             //let categoryMatch = ( scope == "All") || ( CourseData.semester == scope )
-            return CourseData.course!.lowercaseString.containsString(searchText.lowercaseString)
+            return professor.lowercaseString.containsString(searchText.lowercaseString)
             }
-        }
+        //}
         
-        if scopeSelected == 1 {
+        /*if scopeSelected == 1 {
             
             filteredProfessors = professorData.filter { ProfessorData in
                 //let categoryMatch = ( scope == "All") || ( CourseData.semester == scope )
                 return ProfessorData.professorName!.lowercaseString.containsString(searchText.lowercaseString)
             }
             
-        }
+        }*/
         
         tableView.reloadData()
     }
     
-    
-    @IBAction func scope(sender: UISegmentedControl) {
-        
-        if (scope.selectedSegmentIndex == 0) {
-            
-            scopeSelected = 0
-            tableView.reloadData()
-            
-        }
-        
-        if (scope.selectedSegmentIndex == 1) {
-            
-            scopeSelected = 1
-            tableView.reloadData()
-        }
-        
-    }
     
     func addBlurEffect() {
         // Add blur view
@@ -322,11 +417,11 @@ extension MasterTableViewController: UISearchResultsUpdating {
     }
 }
 
-/*extension MasterTableViewController: UISearchBarDelegate {
+extension MasterTableViewController: UISearchBarDelegate {
     func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
         
-        if (selectedScope == 0){
+        /*if (selectedScope == 0){
             
             scopeSelected = 0
             tableView.reloadData()
@@ -337,8 +432,7 @@ extension MasterTableViewController: UISearchResultsUpdating {
             scopeSelected = 1
             tableView.reloadData()
             
-        }
+        }*/
     }
-    */
-*/
 }
+
