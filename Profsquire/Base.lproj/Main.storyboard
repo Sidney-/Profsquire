@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Global Split View Controller-->
@@ -262,7 +263,7 @@
             </objects>
             <point key="canvasLocation" x="2110.5" y="1111.5"/>
         </scene>
-        <!--Master Table View Controller-->
+        <!--Profsquire-->
         <scene sceneID="BxY-yp-xC4">
             <objects>
                 <tableViewController id="jab-2o-i8R" customClass="MasterTableViewController" customModule="Profsquire" customModuleProvider="target" sceneMemberID="viewController">
@@ -270,12 +271,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ZHj-aZ-Muk">
+                            <rect key="frame" x="0.0" y="136" width="375" height="531"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Aj5-TE-bxw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="Aj5-TE-bxw">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aj5-TE-bxw" id="ChB-wm-eMw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -288,29 +294,102 @@
                             <outlet property="delegate" destination="jab-2o-i8R" id="maq-QQ-ysb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="L0l-7F-KQ2">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Z4I-ZN-b3g">
-                            <rect key="frame" x="78.5" y="7" width="218" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Professor"/>
-                                <segment title="Course"/>
-                            </segments>
-                            <color key="tintColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="scope:" destination="jab-2o-i8R" eventType="valueChanged" id="8yW-X5-zdl"/>
-                            </connections>
-                        </segmentedControl>
+                    <navigationItem key="navigationItem" title="Profsquire" id="L0l-7F-KQ2">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Next" id="M37-PH-RhX">
+                                <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Filter" id="s7s-ZU-Fan">
+                                <color key="tintColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="RGe-vQ-ccn" kind="presentation" identifier="FilterDepartment" modalTransitionStyle="coverVertical" id="CZM-xl-Z7T"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="scope" destination="Z4I-ZN-b3g" id="YKJ-LQ-yjb"/>
+                        <outlet property="filterButton" destination="s7s-ZU-Fan" id="v3M-Ld-yND"/>
+                        <segue destination="oEb-v1-bRS" kind="presentation" identifier="FilterCourse" id="lzp-X8-4Re"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="la7-kb-CzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3038.5" y="307.5"/>
+        </scene>
+        <!--Choose a deparment-->
+        <scene sceneID="ND5-Ft-G8b">
+            <objects>
+                <tableViewController id="jg9-9f-9JK" customClass="FilterTableViewController" customModule="Profsquire" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iel-Qh-dUA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterCell" id="hNc-mP-Cth">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hNc-mP-Cth" id="vuy-HW-YnA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9qB-3f-jNi" kind="unwind" identifier="unwind" unwindAction="unwindWithSelectedDepartment:" id="hi2-hA-7nO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jg9-9f-9JK" id="Ucl-2O-XF1"/>
+                            <outlet property="delegate" destination="jg9-9f-9JK" id="ucS-cX-LsL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose a deparment" id="F0b-QT-mWV">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Cti-Jn-t8A">
+                            <connections>
+                                <action selector="cancel:" destination="jg9-9f-9JK" id="FjY-1y-qbx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZ8-oU-A45" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9qB-3f-jNi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3897.5" y="306.5"/>
+        </scene>
+        <!--Choose a course-->
+        <scene sceneID="tIl-mr-6cj">
+            <objects>
+                <tableViewController id="SCV-G8-e4c" customClass="FilterCourseTableViewController" customModule="Profsquire" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xxl-Xs-erY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="9oT-hz-vI7">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9oT-hz-vI7" id="D3h-mn-l7I">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="rQr-4a-JEq" kind="unwind" identifier="unwindCourse" unwindAction="unwindWithSelectedCourse:" id="QRC-se-jAo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SCV-G8-e4c" id="2ex-nB-gVA"/>
+                            <outlet property="delegate" destination="SCV-G8-e4c" id="SC7-eO-bDZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose a course" id="K0T-Wt-xMJ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LuH-ts-MGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rQr-4a-JEq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4746.5" y="307.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b29-Em-3P4">
@@ -351,7 +430,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHV-yQ-9C4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.5" y="307.5"/>
+            <point key="canvasLocation" x="2564.5" y="307.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g8l-De-I3i">
@@ -372,6 +451,44 @@
             </objects>
             <point key="canvasLocation" x="1661.5" y="307.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KX6-D0-ndJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RGe-vQ-ccn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ekr-Tx-I0b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jg9-9f-9JK" kind="relationship" relationship="rootViewController" id="wlw-9H-e3X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ve3-gj-4m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3466" y="307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BEn-JM-AA1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oEb-v1-bRS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Pa-gL-M0t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SCV-G8-e4c" kind="relationship" relationship="rootViewController" id="nUJ-yV-7Dc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGl-XP-Bpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4316.5" y="306.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Listview Icon" width="270" height="278"/>
@@ -380,7 +497,8 @@
         <image name="graph" width="918" height="766"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="huj-4U-ZeB"/>
+        <segue reference="osG-ca-qzV"/>
         <segue reference="uN0-Q6-Pcb"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

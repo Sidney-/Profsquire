@@ -9,8 +9,8 @@
 import UIKit
 
 class ProfessorTableViewController: UITableViewController {
-    /*
-    //Variables.
+    
+    /*//Variables.
     var sections: [String] = []
     var gradeDistributionBySections: [[CourseData]] = []
     var unSortedGradeDistribution: [[CourseData]]?
@@ -125,7 +125,7 @@ class ProfessorTableViewController: UITableViewController {
         
         for var i = 0; i<allProfessors.count; i++ {
             
-            if ( allProfessors[i].professorId! == data.professorId!) {
+            if ( allProfessors[i].professorName! == data.instructor!) {
                 
                 cell.ProfessorName.text = allProfessors[i].professorName
             }}
@@ -229,7 +229,7 @@ class ProfessorTableViewController: UITableViewController {
     }
     
     //This function filters needed courses into an array from all the courses.
-    func filteredProfessorResult(object: ProfessorData, allData:[CourseData]) -> [CourseData] {
+    /*func filteredProfessorResult(object: ProfessorData, allData:[CourseData]) -> [CourseData] {
         
         var filteredCourse: [CourseData] = []
         
@@ -237,14 +237,14 @@ class ProfessorTableViewController: UITableViewController {
         
         for course in allData {
             
-            if (course.professorId == objectProfessor){
+            if (course.instructor == objectProfessor){
                 
                 filteredCourse.append(course)
             }
         }
         
         return filteredCourse
-    }
+    }*/
     
     //This function filters needed data into an array from all the data when the user is using
     //the search bar.
@@ -436,8 +436,6 @@ class ProfessorTableViewController: UITableViewController {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     }
-    */
-    */
+*/*/
     
 }
-

@@ -10,8 +10,10 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController, UISearchBarDelegate {
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
+<<<<<<< HEAD
     var allData: [CourseData] = []
     var professors = []
     override func viewDidLoad() {
@@ -19,9 +21,47 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
+=======
+       override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //deleteAllData()
+        
+        //allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
+       
+        /*for (var i = 0; i < allData.count; i++){
+
+            let newTerm = NSEntityDescription.insertNewObjectForEntityForName("Term", inManagedObjectContext: context) as NSManagedObject
+        
+            newTerm.setValue(allData[i].year, forKey: "year")
+            newTerm.setValue(allData[i].semester, forKey: "semester")
+            newTerm.setValue(allData[i].department, forKey: "department")
+            newTerm.setValue(allData[i].subject, forKey: "subject")
+            newTerm.setValue(allData[i].course, forKey: "course")
+            newTerm.setValue(allData[i].section, forKey: "section")
+            newTerm.setValue(allData[i].instructor, forKey: "instructor")
+            newTerm.setValue(allData[i].a, forKey: "a")
+            newTerm.setValue(allData[i].b, forKey: "b")
+            newTerm.setValue(allData[i].c, forKey: "c")
+            newTerm.setValue(allData[i].d, forKey: "d")
+            newTerm.setValue(allData[i].f, forKey: "f")
+            newTerm.setValue(allData[i].w, forKey: "w")
+            newTerm.setValue(allData[i].total, forKey: "total")
+            newTerm.setValue(instructorGPA(allData[i].a!, b: allData[i].b!, c: allData[i].c!, d: allData[i].d!, f: allData[i].f!), forKey: "instructorGPA")
+            newTerm.setValue(withdrawalRate( allData[i].w!, totalStudents: allData[i].total!), forKey: "withdrawalRate")
+        
+            do {
+                try context.save()
+            } catch {
+                print("Space Aliens");
+            }
+            
+        }*/
+>>>>>>> origin/master
         
         //Deletes all rows with nil values for instructorGPA
         
+<<<<<<< HEAD
         var request = NSFetchRequest(entityName: "Term")
         request.returnsObjectsAsFaults = false
         
@@ -51,6 +91,31 @@ class ViewController: UIViewController, UISearchBarDelegate {
         } catch {
             print("Space Aliens: Part 2");
         }
+=======
+                /*do{
+            
+            let request = NSFetchRequest(entityName: "Term")
+            let results = try context.executeFetchRequest(request)
+            
+            if results.count > 0 {
+                
+                for item in results as! [NSManagedObject]{
+                    
+                    let name = item.valueForKey("a")
+                    let password = item.valueForKey("instructor")
+                    
+                    print(name!, password!)
+                }
+            }
+            
+        }catch{
+            
+            print("Erorr, data not read!")
+        
+        }*/
+        
+        
+>>>>>>> origin/master
       
         /*self.searchBar.layer.borderColor = UIColor.whiteColor().CGColor
         self.searchBar.layer.borderWidth = 0.5
