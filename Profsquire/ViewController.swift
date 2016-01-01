@@ -13,18 +13,69 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-<<<<<<< HEAD
+    
     var allData: [CourseData] = []
-    var professors = []
-    override func viewDidLoad() {
+    
+       override func viewDidLoad() {
         super.viewDidLoad()
+        deleteAllData()
+        
+        allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
-=======
-       override func viewDidLoad() {
-        super.viewDidLoad()
         
+        for (var i = 0; i < allData.count; i++){
+        
+        let newTerm = NSEntityDescription.insertNewObjectForEntityForName("Term", inManagedObjectContext: context) as NSManagedObject
+        
+        newTerm.setValue(allData[i].year, forKey: "year")
+        newTerm.setValue(allData[i].semester, forKey: "semester")
+        newTerm.setValue(allData[i].department, forKey: "department")
+        newTerm.setValue(allData[i].subject, forKey: "subject")
+        newTerm.setValue(allData[i].course, forKey: "course")
+        newTerm.setValue(allData[i].section, forKey: "section")
+        newTerm.setValue(allData[i].instructor, forKey: "instructor")
+        newTerm.setValue(allData[i].a, forKey: "a")
+        newTerm.setValue(allData[i].b, forKey: "b")
+        newTerm.setValue(allData[i].c, forKey: "c")
+        newTerm.setValue(allData[i].d, forKey: "d")
+        newTerm.setValue(allData[i].f, forKey: "f")
+        newTerm.setValue(allData[i].w, forKey: "w")
+        newTerm.setValue(allData[i].total, forKey: "total")
+        newTerm.setValue(instructorGPA(allData[i].a!, b: allData[i].b!, c: allData[i].c!, d: allData[i].d!, f: allData[i].f!), forKey: "instructorGPA")
+        newTerm.setValue(withdrawalRate( allData[i].w!, totalStudents: allData[i].total!), forKey: "withdrawalRate")
+        
+        do {
+        try context.save()
+        } catch {
+        print("Space Aliens");
+        }
+        
+        }
+        
+        //let request = NSFetchRequest(entityName: "Term")
+        //let instructor = "Soleymani"
+        //request.predicate = NSPredicate(format: "instructor == %@", instructor)
+        //print(request.predicate)
+        
+        let request = NSFetchRequest(entityName: "Term")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.executeFetchRequest(request)
+            
+            if results.count > 0 {
+                for result: AnyObject in results{
+                    print(result)
+                }
+            }else{ print("No Aliens")}
+        } catch {
+            print("Space Aliens: Part 2");
+        }
+        
+
+    
         //deleteAllData()
         
         //allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
@@ -57,41 +108,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
             }
             
         }*/
->>>>>>> origin/master
         
-        //Deletes all rows with nil values for instructorGPA
+        //let request = NSFetchRequest(entityName: "Term")
+        //let instructor = "Soleymani"
+        //request.predicate = NSPredicate(format: "instructor == %@", instructor)
+        //print(request.predicate)
         
-<<<<<<< HEAD
-        var request = NSFetchRequest(entityName: "Term")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let results = try context.executeFetchRequest(request)
-            
-            if results.count > 0 {
-                for result: AnyObject in results as! [NSManagedObject]{
-                    let instructor = result.valueForKey("overallInstructorGPA")
-                    if instructor as? Int == 0{
-                        
-                        
-                        
-                        //CODE ALGORITHM HERE
-                        
-                        
-                        
-                        
-                        
-                    }
-                    //print(instructor)
-                }
-                
-                //try! context.save()
-                
-            }else{ print("No Aliens")}
-        } catch {
-            print("Space Aliens: Part 2");
-        }
-=======
                 /*do{
             
             let request = NSFetchRequest(entityName: "Term")
@@ -115,12 +137,24 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }*/
         
         
->>>>>>> origin/master
       
         /*self.searchBar.layer.borderColor = UIColor.whiteColor().CGColor
         self.searchBar.layer.borderWidth = 0.5
         searchBar.layer.cornerRadius = 20.0
         searchBar.clipsToBounds = true*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         //hide navigation bar
         navigationController?.navigationBarHidden = true
@@ -161,101 +195,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         return instructorGPA
     }
     
-    func withdrawalRate( w:Int, totalStudents:Int ) -> Float {
+    func withdrawalRate( w:Int, totalStudents:Int ) -> Float{
         return ((Float(w)/Float(totalStudents)) * 100)
-    }
-    
-    func removeNilValuesFromInstructorGPA() {
-        
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext
-        
-        //Deletes all rows with nil values for instructorGPA
-        
-        let request = NSFetchRequest(entityName: "Term")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let results = try context.executeFetchRequest(request)
-            
-            if results.count > 0 {
-                for result: AnyObject in results as! [NSManagedObject]{
-                    let instructor = result.valueForKey("instructorGPA")
-                    if instructor == nil{
-                        // context.deleteObject(result as! NSManagedObject)
-                        print(instructor)
-                    }
-                    //print(instructor)
-                }
-                
-                //try! context.save()
-                
-            }else{ print("No Aliens")}
-        } catch {
-            print("Space Aliens: Part 2");
-        }
-    }
-    
-    func inputAllDataIntoCoreDataDatabase () {
-        
-        allData = GradeDistribution(courseData: GradeDistributionService().jsonResultArray).courseDataArray
-        
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext
-        
-        for (var i = 0; i < allData.count; i++){
-            
-            let newTerm = NSEntityDescription.insertNewObjectForEntityForName("Term", inManagedObjectContext: context) as NSManagedObject
-            
-            newTerm.setValue(allData[i].year, forKey: "year")
-            newTerm.setValue(allData[i].semester, forKey: "semester")
-            newTerm.setValue(allData[i].department, forKey: "department")
-            newTerm.setValue(allData[i].subject, forKey: "subject")
-            newTerm.setValue(allData[i].course, forKey: "course")
-            newTerm.setValue(allData[i].section, forKey: "section")
-            newTerm.setValue(allData[i].instructor, forKey: "instructor")
-            newTerm.setValue(allData[i].a, forKey: "a")
-            newTerm.setValue(allData[i].b, forKey: "b")
-            newTerm.setValue(allData[i].c, forKey: "c")
-            newTerm.setValue(allData[i].d, forKey: "d")
-            newTerm.setValue(allData[i].f, forKey: "f")
-            newTerm.setValue(allData[i].w, forKey: "w")
-            newTerm.setValue(allData[i].total, forKey: "total")
-            newTerm.setValue(instructorGPA(allData[i].a!, b: allData[i].b!, c: allData[i].c!, d: allData[i].d!, f: allData[i].f!), forKey: "instructorGPA")
-            newTerm.setValue(withdrawalRate( allData[i].w!, totalStudents: allData[i].total!), forKey: "withdrawalRate")
-            
-            do {
-                try context.save()
-            } catch {
-                print("Space Aliens");
-            }
-            
-        }
-        
-    }
-    
-    func printTermDatabase() {
-        
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext
-        
-        let request = NSFetchRequest(entityName: "Term")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let results = try context.executeFetchRequest(request)
-            
-            if results.count > 0 {
-                for result: AnyObject in results as! [NSManagedObject]{
-                    print(result)
-                }
-                
-                
-            }else{ print("No Aliens")}
-        } catch {
-            print("Space Aliens: Part 2");
-        }
-        
     }
 
 

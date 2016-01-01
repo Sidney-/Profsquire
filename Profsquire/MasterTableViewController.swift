@@ -33,11 +33,11 @@ class MasterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.tableFooterView = UIView()
         
         //Parsing instructor data
         instructorArray = ParsingDataFromCoreData().ParseData("instructor")
         noneDuplicatedInstructorArray = GetNonduplicatedData().getNoneDuplicatedProfessorList(instructorArray)
+        
         
         //department = ParsingDataFromCoreData().ParseData("department")
         //noneDuplicatedDepartment = GetNonduplicatedData().getNoneDuplicatedProfessorList(department)
